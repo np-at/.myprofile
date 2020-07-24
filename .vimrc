@@ -1,0 +1,1 @@
+/home/cforat/.myprofiles/.vimrc ~/.vimrc
