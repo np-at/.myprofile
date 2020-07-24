@@ -20,6 +20,13 @@ fi
 if [[ ! -h ~/.vimrc ]]; then
     ln -s -f "$DIR/.vimrc" ~/.vimrc
 fi
+
+
+#symlink .alacritty.yml
+if [[ ! -h ~/.alacritty.yml ]]; then
+    ln -s -f "$DIR/.alacritty.yml" ~/.alacritty.yml
+fi
+
 #symlink .zshrc
 ln -s -f "$DIR/.zshrc" ~/.zshrc
 
