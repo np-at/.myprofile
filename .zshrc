@@ -2,6 +2,12 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 path+=("$HOME/.local/bin")
+
+if [[ $(uname -s) == 'Darwin' ]]; then
+    path+=('/Applications/VeraCrypt.app/Contents/MacOS')
+fi
+
+
 # various custom env flags
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export TERM=xterm-256color
