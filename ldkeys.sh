@@ -14,12 +14,19 @@ if [[ ! -a /tmp/vc/config    ]]; then
     cp -r /tmp/vc/ssh_keys/* ~/.ssh
     # fix permissions
     chmod 0600 ~/.ssh/*
+
+    # if no arguments provided
     if [[ ! $1 ]]; then
         echo "mounted vol and copied keys, dismounting now"
         veracrypt -d
     else
-        echo "keeping veracrypt vol mounted"
-        echo $1
+        if [[ $1 == '-k'  ]]; then
+            echo "keeping veracrypt vol mounted"
+            echo $1
+        elif [[ $1 == '-l' ]]; then
+            echo "dismounting onedrive veracrypt file, keeping local ssh ssh_keys"
+            veracrypt -d '/tmp/vc'
+        fi
     fi
 fi
 

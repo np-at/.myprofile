@@ -18,7 +18,12 @@ else
     ZSH_TMUX_AUTOSTART=true
 fi
 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
+  autoload -Uz compinit
+  compinit
+fi
 # Path to your oh-my-zsh installation.
 
 
