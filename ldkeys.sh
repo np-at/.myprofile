@@ -25,7 +25,11 @@ if [[ ! -a /tmp/vc/config    ]]; then
             echo $1
         elif [[ $1 == '-l' ]]; then
             echo "dismounting onedrive veracrypt file, keeping local ssh ssh_keys"
-            veracrypt -d '/tmp/vc'
+            if [[ -d '/private/tmp/vc' ]]; then
+                veracrypt -d '/private/tmp/vc'
+            else
+                veracrypt -d '/tmp/vc'
+            fi
         fi
     fi
 fi
