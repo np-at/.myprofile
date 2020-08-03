@@ -36,12 +36,12 @@ if [[ ! -h ~/.alacritty.yml ]]; then
     ln -s -f "$DIR/.alacritty.yml" ~/.alacritty.yml
 fi
 
-#symlink .zshrc
-ln -s -f "$DIR/.zshrc" ~/.zshrc
-
 #install oh-my-zsh if not present
 if [[ ! -d ~/.oh-my-zsh ]]; then
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
+
+#symlink .zshrc
+ln -s -f "$DIR/.zshrc" ~/.zshrc
 
