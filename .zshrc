@@ -2,6 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 path+=("$HOME/.local/bin")
+path+=("$HOME/usr/bin")
 
 if [[ $(uname -s) == 'Darwin' ]]; then
     path+=('/Applications/VeraCrypt.app/Contents/MacOS')
