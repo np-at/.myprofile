@@ -6,6 +6,8 @@ path+=("$HOME/usr/bin")
 
 if [[ $(uname -s) == 'Darwin' ]]; then
     path+=('/Applications/VeraCrypt.app/Contents/MacOS')
+    # Homebrew path
+    path+=('/usr/local/sbin')
 fi
 
 
