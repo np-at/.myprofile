@@ -11,10 +11,14 @@ if [[ ! -a /tmp/vc/config    ]]; then
         veracrypt -t -k "" -m=nokernelcrypto,ts --protect-hidden=no --pim=0 ~/local_keys  ~/.ssh
         veracrypt -t -k "" -m=nokernelcrypto,ts --protect-hidden=no --pim=0 /mnt/c/Users/npraskins.cforat/OneDrive\ -\ Center\ for\ Accessible\ Technology/tools/keys /tmp/vc
     fi
-    sed 's/M\:\/ssh_keys\//~\/\.ssh\//g' /tmp/vc/config | sed 's/C\:\\Windows\\System32\\OpenSSH\\ssh\.exe/ssh/g' > ~/.ssh/config
-    cp -r /tmp/vc/ssh_keys/* ~/.ssh
-    # fix permissions
-    chmod 0600 ~/.ssh/*
+    if [[ -a /tmp/vc/config ]]; then
+        sed 's/M\:\/ssh_keys\//~\/\.ssh\//g' /tmp/vc/config | sed 's/C\:\\Windows\\System32\\OpenSSH\\ssh\.exe/ssh/g' > ~/.ssh/config
+        cp -r /tmp/vc/ssh_keys/* ~/.ssh
+        # fix permissions
+        chmod 0600 ~/.ssh/*
+    else
+        echo "config file was not found"
+    fi
 
     # if no arguments provided
     if [[ ! $1 ]]; then
