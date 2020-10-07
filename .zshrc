@@ -111,7 +111,7 @@ plugins=(
     npm
     python
     ssh-agent
-    
+    microk8s
 )
 #ZSH_DISABLE_COMPFIX=true
 
