@@ -10,7 +10,8 @@ if [[ ! -d ~/.tmux ]]; then
     ln -s -f "$DIR/.tmux.conf.local" ~/.tmux.conf.local
 fi
 
-
+# make sure undo directory exists for vim
+mkdir ~/.undodir
 # setup vundle
 if [[ ! -d ~/.vim ]]; then
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
