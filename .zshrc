@@ -106,12 +106,18 @@ plugins=(
     dotnet
     docker-compose
     docker
-    jira
+    rust
+    rustup
     jsontools
+    nvm
+    npx
     npm
     python
     ssh-agent
-    microk8s
+    kubectl
+    helm
+    gatsby
+    ripgrep
 )
 #ZSH_DISABLE_COMPFIX=true
 
