@@ -8,6 +8,7 @@ if [[ $(uname -s) == 'Darwin' ]]; then
     path+=('/Applications/VeraCrypt.app/Contents/MacOS')
     # Homebrew path
     path+=('/usr/local/sbin')
+    path+=('~/Library/Android/sdk/platform-tools')
 fi
 
 
