@@ -42,6 +42,10 @@ if [[ ! -d ~/.oh-my-zsh ]]; then
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
+# setup powerlevel10k
+if [[ ! -d ~/.oh-my-zsh/custom/themes/powerlevel10k ]]; then
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+fi
 
 #symlink .zshrc
 ln -s -f "$DIR/.zshrc" ~/.zshrc
