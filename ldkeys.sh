@@ -28,11 +28,6 @@ if [[ ! -a /tmp/vc/config    ]]; then
         echo "config file was not found"
     fi
 
-    # if no arguments provided
-    if [[ ! $1 ]]; then
-        echo "mounted vol and copied keys, dismounting now"
-        veracrypt -d
-    else
         if [[ $1 == '-k'  ]]; then
             echo "keeping veracrypt vol mounted"
             echo $1
@@ -43,7 +38,11 @@ if [[ ! -a /tmp/vc/config    ]]; then
             else
                 veracrypt -d '/tmp/vc'
             fi
+        else
+            echo "mounted vol and copied keys, dismounting now"
+            veracrypt -d
         fi
-    fi
+
+
 fi
 
