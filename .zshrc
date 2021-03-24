@@ -16,6 +16,7 @@ if [[ $(uname -s) == 'Darwin' ]]; then
     # Homebrew path
     path+=('/usr/local/sbin')
     path+=("$HOME/Library/Android/sdk/platform-tools")
+    path+=("$HOME/.dotnet/tools")
 fi
 
 
@@ -124,7 +125,7 @@ plugins=(
     osx
     rsync
     urltools
-    
+    tmux 
     python
     ssh-agent
     kubectl

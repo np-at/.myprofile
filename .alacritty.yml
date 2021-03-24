@@ -60,7 +60,8 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  startup_mode: SimpleFullscreen
+  # startup_mode: SimpleFullscreen
+  startup_mode: Fullscreen
 
   # Window title
   #title: Alacritty
@@ -88,33 +89,39 @@ window:
   #multiplier: 3
 
 # Font configuration
-#font:
+font:
   # Normal (roman) font face
-  #normal:
+  normal:
+    family: Menlo for Powerline
     # Font family
     #
     # Default:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    #family: monospace
+    # family: monospace
+
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
 
   # Bold font face
-  #bold:
+  bold:
+    family: Menlo for Powerline
+    style: Bold
     # Font family
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: monospace
-
+    
     # The `style` can be specified to pick a specific face.
     #style: Bold
 
   # Italic font face
-  #italic:
+  italic:
+    family: Menlo for Powerline
+    style: Italic
     # Font family
     #
     # If the italic family is not specified, it will fall back to the

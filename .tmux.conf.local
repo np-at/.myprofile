@@ -311,4 +311,3 @@ setw -g xterm-keys off
 
 # move status line to top
 # set -g status-position top
-
