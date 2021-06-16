@@ -6,7 +6,16 @@ if [[ ! -a /tmp/vc/config    ]]; then
 
     if [[ $(uname -s) == 'Darwin' ]]; then
         veracrypt -t -k "" -m=ts --protect-hidden=no --pim=0 ~/local_keys  ~/.ssh
-        veracrypt -t -k "" -m=ts --protect-hidden=no --pim=0 ~/OneDrive\ -\ Center\ for\ Accessible\ Technology/tools/keys /tmp/vc
+
+        # If keep flag is passed, we need to use ntfs-3g to mount filesystem in read/write mode
+        if [[ $1 == '-k'  ]]; then
+
+            veracrypt -t -k "" -m=ts --filesystem=none --protect-hidden=no --pim=0 ~/OneDrive\ -\ Center\ for\ Accessible\ Technology/tools/keys;
+            KeysVol=$(VeraCrypt -t -l | grep -e "OneDrive - Center for Accessible Technology/tools/keys" |  sed 's/ /\n/g' | grep "/dev/") ;
+            sudo ntfs-3g $KeysVol /tmp/vc -o local -o allow_other -o auto_xattr -o auto_cache ;
+        else
+            veracrypt -t -k "" -m=ts --protect-hidden=no --pim=0 ~/OneDrive\ -\ Center\ for\ Accessible\ Technology/tools/keys /tmp/vc ;
+        fi
     else
         veracrypt -t -k "" -m=nokernelcrypto,ts --protect-hidden=no --pim=0 ~/local_keys  ~/.ssh
         if [[ -a /mnt/c/Users/npraskins.cforat ]]; then

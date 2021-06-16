@@ -292,7 +292,7 @@ set -g default-terminal "screen-256color"
 set -g mouse on
 
 setw -g xterm-keys off
-source "~/.local/lib/python3.8/site-packages/powerline/bindings/tmux/powerline.conf"
+# source "~/.local/lib/python3.8/site-packages/powerline/bindings/tmux/powerline.conf"
 # increase history size
 #set -g history-limit 10000
 
